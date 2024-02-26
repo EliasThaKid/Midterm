@@ -91,19 +91,27 @@
         }
 
         .nav-button {
+
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: rgba(0, 0, 0, 0);
             color: #fafaf8;
             font-size: 24px; 
-            border-radius: 2px; 
-            border: 3px solid #fafaf8; 
+            border-radius: 3px; 
+            border: 4px solid #fafaf8; 
             transition: background-color 0.3s ease, border-color 0.3s ease;
             width: 240px;
             height: 60px;
+            transition: all 0.3s ease-in-out;
 
         }  
+
+        .nav-button:hover {
+            transition: all 0.3s ease-in-out;
+            background-color: #969E7D;
+            border-color: #969E7D;
+        }
 
         .popup-menu {
             display: block;
@@ -122,12 +130,6 @@
         .popup-menu:hover {
             display: block;
         }
-
-        .nav-button:hover {
-            background-color: #969E7D;
-            border-color: #969E7D;
-        }
-
 
         .popup-menu-container {
             display: flex;
@@ -177,6 +179,7 @@
                 width: 100%;
                 max-width: 1300px;
                 padding: 0;
+                z-index: 999;
             }
 
             .nav-button {
@@ -193,6 +196,7 @@
                 /* gap: 25px; */
                 padding: 80px, 0px;
                 width: 100%;
+                z-index: 999;
                 background-color: #363636;
                 overflow: scroll; 
                 transition: height 0.3s ease, padding 0.3s ease; 
@@ -250,7 +254,7 @@
                 position: absolute;
                 border-radius: 2px;
                 top: 24%;
-                right: 8%;
+                right: 10%;
                 transform: translate(5%, 10%);
                 z-index: 999;
             
@@ -338,6 +342,7 @@
 
 
     </nav>
+     
     <div id="popup-nav-mobile">
 
         <ul class="mobile-list">
@@ -351,6 +356,14 @@
 
         </ul>
     </div>
+
+    <div class="hero-section">
+        <video src="" class="welcome">
+
+        </video>
+    </div>
+
+
 
 
     <script>
