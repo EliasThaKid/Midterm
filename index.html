@@ -3,8 +3,281 @@
     
 <head>
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title> Wocky Slush Records </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans';
+        }
+
+
+        .navbar {
+            background: #AC63F0;   
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            position: sticky; 
+            top: 0;
+            z-index: 999; 
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            height: 10vh;
+            z-index: 1;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 auto;
+        } 
+
+        #navbar-logo {
+            color: #fafaf8;  
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2.3em;
+            padding-right: 100px;
+            margin-left: 100px;
+        }  
+
+        #navbar-logo:hover {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(-1deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            list-style: none;
+            text-align: center;
+            padding-left: 100px;
+            margin-right: 80px;
+        }
+
+        .navbar-item {
+            font-size: 1.35em;
+        }
+
+        .navbar-link {
+            color: #363636;
+          
+        }
+
+        .navbar-link:hover {
+            color: #7A7A7A;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0);
+            color: #fafaf8;
+            font-size: 24px; 
+            border-radius: 2px; 
+            border: 3px solid #fafaf8; 
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            width: 240px;
+            height: 60px;
+
+        }  
+
+        .popup-menu {
+            display: block;
+            position: absolute;
+            background-color: #969E7D;
+            width:240px;
+            height: 210px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 2px; 
+            list-style: none;
+            text-decoration: none;
+            z-index: 999;
+        }
+
+        .popup-menu:hover {
+            display: block;
+        }
+
+        .nav-button:hover {
+            background-color: #969E7D;
+            border-color: #969E7D;
+        }
+
+
+        .popup-menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-top: 35px;
+            
+        }
+
+        .navbar-link a {
+            color: #fafaf8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+        }
+
+        .navbar-link:hover {
+            color: #AC63F0;
+            background: #AC63F0;
+            transition: all 0.3s ease;
+             
+        }
+
+        #popup-nav-mobile {
+            display: none;
+        }
+
+
+
+        @media screen and (max-width: 960px) {
+
+            /* hide the pop up menus */
+           
+            .navbar__container {
+                display: flex;
+                justify-content: space-between;
+                height: 80px;
+                z-index: 1;
+                width: 100%;
+                max-width: 1300px;
+                padding: 0;
+            }
+
+            .nav-button {
+                display: none;
+            }  
+
+            #popup-nav-mobile {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+                border-radius: 3px;
+                /* gap: 25px; */
+                padding: 80px, 0px;
+                width: 100%;
+                background-color: #363636;
+                overflow: scroll; 
+                transition: height 0.3s ease, padding 0.3s ease; 
+            }
+
+            .mobile-link {
+
+                margin-top: 20px; 
+                margin-bottom: 15px;
+
+            }
+
+            .mobile-list  {
+                
+                list-style-type: none;
+                transition: display 0.3s ease;
+                
+            }
+
+
+
+            .mobile-list a {
+
+                list-style-type: none;
+                color: #fafaf8;
+                height: 30px;
+                font-size: 2.0em;
+                text-decoration: none;
+                transition: all 0.3s ease;
+
+            }
+
+            .mobile-link:hover {
+
+                color: #AC63F0;
+                background: #AC63F0;
+                border-radius: 3px;
+                transition: all 0.3s ease;
+                
+            }
+
+
+            #navbar__logo {
+
+                padding-left: 25px;
+
+            }
+
+            .navbar__toggle  {
+                height: 60px;
+                width: 60px;
+                border: 4px solid #fafaf8;
+                transition: border 0.3s ease-in-out;
+                display: block;
+                position: absolute;
+                border-radius: 2px;
+                top: 24%;
+                right: 8%;
+                transform: translate(5%, 10%);
+                z-index: 999;
+            
+            }
+
+            .navbar__toggle .bar {
+                width: 40px;
+                height: 6px; 
+                border-radius: 2px;
+                margin: 8px auto;
+                transition: all 0.3s ease-in-out;
+                background: #fafaf8;
+                color: #fafaf8;
+            }
+
+            .navbar__toggle .bar {
+                display: block;
+                cursor: pointer;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(1) {
+                transform: translateY(14px) rotate(45deg);
+            }
+
+            #mobile-menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(3) {
+                transform: translateY(-14px) rotate(-45deg);
+            }
+           
+    } 
+
+    </style>
 
 </head>
 
@@ -14,29 +287,38 @@
 
         <div class="navbar-container">
 
-            <a href="index.html" id="navbar-logo"> BLND VZN </a>
+            <a href="index.html" id="navbar-logo"> WSR </a>
 
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
             <ul class="navbar-menu">
 
                 <li class="navbar-item">
 
-                    <a href="/hw2/index.html" class="navbar-link"> 
-                        OUR GALLERY </a> 
+                    <button class="nav-button" id="nb1" > The Sound </button>
+                    <ul id="menu1" class="popup-menu">
+                        <div class="popup-menu-container">
+                            <li class="navbar-link"> <a href="#">yuh</a> </li>
+                            <li class="navbar-link"> <a href="#">Link 2</a> </li>
+                            <li class="navbar-link"> <a href="#">Link 3</a> </li>
+                        </div>
+                    </ul>
 
                 </li>
 
                 <li class="navbar-item">
 
-                    <a href="contact.html" class="navbar-link"> 
-                        CONTACT US </a> 
-
-                </li>
-
-                <li class="navbar-item">
-
-                    <a href="exhibits.html" class="navbar-link"> 
-                        THE EXHIBITS </a>
+                    <button class="nav-button" id="nb2"> Meet Us </button> 
+                    <ul id="menu2" class="popup-menu">
+                        <div class="popup-menu-container">
+                            <li class="navbar-link"> <a href="#">Link 1</a> </li>
+                            <li class="navbar-link"> <a href="#">Link 2</a> </li>
+                            <li class="navbar-link"> <a href="#">Link 3</a> </li>
+                        </div>
+                    </ul>
 
                 </li>
 
@@ -44,7 +326,109 @@
 
         </div>
 
+        
+
+
     </nav>
+    <div id="popup-nav-mobile">
+
+        <ul class="mobile-list">
+
+            <li class="mobile-link"> <a href="#">yuh</a> </li>
+            <li class="mobile-link"> <a href="#">Link 2</a> </li>
+            <li class="mobile-link"> <a href="#">Link 3</a> </li>
+            <li class="mobile-link"> <a href="#">Link 1</a> </li>
+            <li class="mobile-link"> <a href="#">Link 2</a> </li>
+            <li class="mobile-link"> <a href="#">Link 3</a> </li>
+
+        </ul>
+    </div>
+
+
+    <script>
+
+        const navButtons = document.getElementsByClassName('nav-button');
+        const popupMenus = document.getElementsByClassName('popup-menu');
+        const menu = document.querySelector('#mobile-menu');
+        const mobileMenu = document.querySelector('#popup-nav-mobile');
+        const mobileLinks = document.querySelector('.mobile-list');
+
+        var on = false;
+
+        mobileMenu.style.height = "0px";
+        mobileMenu.style.padding = "0px";
+
+        // mobileLinks.style.display = "none";
+
+
+        for (let i = 0; i < popupMenus.length; i++) {
+            popupMenus[i].style.display = "none";
+        }
+
+
+
+        menu.addEventListener("click", function() {
+            menu.classList.toggle("is-active");
+        });
+
+        menu.addEventListener("click", toggleMobileMenu);
+
+        for (let i = 0; i < navButtons.length; i++) {
+            navButtons[i].addEventListener("mouseenter", revealMenu);
+            popupMenus[i].addEventListener("mouseleave", hideMenu);
+        }
+
+        for (let i = 0; i < popupMenus.length; i++) {
+            popupMenus[i].addEventListener("mouseenter", changeBackground);
+            popupMenus[i].addEventListener("mouseleave", resetBackgroundPm);
+            navButtons[i].addEventListener("mouseleave", resetBackground);
+        }
+
+
+        function toggleMobileMenu()  {
+            on = !on;
+            mobileMenu.style.height = on ? "350px" : "0px";
+            mobileMenu.style.padding = on ? "80px, 0px" : "0px";
+        }
+
+       
+
+        function revealMenu(event) {
+            const buttonId = event.target.id.slice(event.target.id.indexOf("b")+1);
+            const popupMenu = document.getElementById("menu" + buttonId);
+            popupMenu.style.display = "block";
+        }
+
+        function hideMenu(event) {
+            const popupMenuid = event.target.id;
+            const popupMenu = document.getElementById(popupMenuid);
+            popupMenu.style.display = "none";
+        }
+
+
+        function changeBackground(event) {
+            const btnidnum = event.target.id.slice(event.target.id.indexOf("u")+1);
+            const navButton = document.getElementById("nb" + btnidnum);
+            navButton.style.backgroundColor = "#969E7D";
+            navButton.style.borderColor = "#969E7D";
+        }
+
+        function resetBackgroundPm(event) {
+            const btnidnum = event.target.id.slice(event.target.id.indexOf("u")+1);
+            const navButton = document.getElementById("nb" + btnidnum);
+            navButton.style.backgroundColor = "";
+            navButton.style.borderColor = "";
+        }
+
+        function resetBackground(event) {
+            const btnid = event.target.id;
+            const navButton = document.getElementById(btnid);
+            navButton.style.backgroundColor = "";
+            navButton.style.borderColor = "";
+        }
+
+
+    </script>
 
 
 </body>

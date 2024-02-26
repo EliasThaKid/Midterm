@@ -7,8 +7,8 @@
 
 
 .navbar {
-    background: #EDEDE8;   
-    height: 10vh;
+    background: #AC63F0;   
+    height: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,12 +16,12 @@
     position: sticky; 
     top: 0;
     z-index: 999; 
-    border-bottom: 3px solid #363636;
+    /* border-bottom: 3px solid #363636; */
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 10vh;
     z-index: 1;
     width: 100%;
@@ -36,7 +36,7 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 1.3em;
-    padding-left: 25px;
+    padding-right: 100px;
 }  
 
 #navbar-logo:hover {
@@ -60,12 +60,13 @@
 .navbar-menu {
     display: flex;
     align-items: center;
+    gap: 90px;
     list-style: none;
     text-align: center;
+    padding-left: 300px;
 }
 
 .navbar-item {
-    height: 20vh;
     font-size: 1.35em;
 }
 
@@ -81,4 +82,28 @@
 .navbar-link:hover {
     color: #7A7A7A;
     transition: all 0.3s ease;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: #e6dfdf; 
+    /* padding: 20px 20px;  */
+    font-size: 24px; 
+    border-radius: 2px; 
+    border: 3px solid #e6dfdf; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    width: 240px;
+    height: 60px;
+    /* margin: 0px 50px 0px 50px; */
+   
+
+}
+
+.nav-button:hover {
+    
+    background-color: #969E7D;
+    border-color: #969E7D;
 }
