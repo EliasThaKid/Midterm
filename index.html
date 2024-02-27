@@ -4,15 +4,49 @@
 <head>
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
     <link rel="stylesheet" href="styles.css">
+
     <title> Wocky Slush Records </title>
 
     <style>
+
+         
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 60vh; 
+            z-index: 1;
+            overflow: hidden;
+        }
 
         .hero-section video {
             position: absolute;
             width: 100%;
             height: 100%;
+            z-index: 1;
             object-fit: cover;
+            overflow: hidden;
+        }
+
+        .wsl {
+            background-color: rgba(150, 158, 125, .8);
+            height: 30vh;
+            width: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.9em;
+            color: rgba(250, 250, 248, 0.5);
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            position: relative;
+            margin: 70px auto;
+        }
+
+        .wsl img {
+            width: 125px;
+            height: 125px;
         }
 
 
@@ -40,7 +74,6 @@
                 width: 100%;
                 z-index: 1;
                 max-width: 960px;
-                /* height: 100%; */
                 object-fit: cover;
             }
 
@@ -57,6 +90,7 @@
                 border-radius: 50px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
                 z-index: 3;
+                margin: 70px auto;
             }
 
             .wsl img {
@@ -138,10 +172,12 @@
     </div>
 
     <div class="hero-section">
+        
         <video src="images/background.mp4" class="welcome" autoPlay loop muted> 
-           
         </video>
+
         <div class="wsl">  <img src="/images/hh.png"/>  </div>
+
     </div>
 
     <div class="content">
