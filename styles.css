@@ -203,9 +203,14 @@
 
     footer .social-links li a {
       font-size: 2em;
-      margin: 0 10px;
+      margin: 0 20px;
       display: inline-block;
       transition: 0.3s;
+      overflow: visible;
+    }
+
+    .social-links img {
+        height: 45px;
     }
 
     footer .social-links a:hover {
@@ -288,7 +293,6 @@
         display: none;
     }
 
-    /* hide the pop up menus */
     
 
     .navbar__container {
