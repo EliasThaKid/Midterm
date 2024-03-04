@@ -4,7 +4,8 @@
 <head>
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
     <link rel="stylesheet" href="styles.css">
-
+    <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="images/hh.png">
     <title> Wocky Slush Records </title>
 
     <style>
@@ -13,7 +14,7 @@
         .hero-section {
             position: relative;
             width: 100%;
-            height: 60vh; 
+            height: 70vh; 
             z-index: 1;
             overflow: hidden;
         }
@@ -21,7 +22,7 @@
         .hero-section video {
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 110%;
             z-index: 1;
             object-fit: cover;
             overflow: hidden;
@@ -29,15 +30,15 @@
 
         .wsl {
             background-color: rgba(150, 158, 125, .8);
-            height: 30vh;
-            width: 40vh;
+            height: 35vh;
+            width: 55vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             font-size: 1.9em;
-            color: rgba(250, 250, 248, 0.5);
-            border-radius: 50px;
+        
+            border-radius: 90px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 3;
             position: relative;
@@ -49,88 +50,66 @@
             height: 125px;
         }
 
+        .content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background-color: #fafafa;
+            height: 560px;
+            font-size: 1.4em;
+            padding: 20px 50px;
+            flex-direction: column;
+            text-align: center;
+            z-index: 4;
+        
+        }
+
+        .box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(150, 158, 125, .8);
+            border-radius: 60px;
+            height: 44vh;
+            width: 100%;
+            margin-top: 30px;
+            font-size: 1.6em;
+            transition: all 0.3s;
+        }
+
+       
 
 
         @media screen and (max-width: 960px) {
 
+            .box {
+                position: relative;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                padding: 30px;
+                background-color: rgba(150, 158, 125, .8);
+                border-radius: 60px;
+                height: 39vh;
+                width: 65vh;
+                margin-top: 30px;
+                font-size: 1.3em;
+            }
+
             .popup-menu {
                 display: none;
             }
-            
-            .hero-section {
-                position: relative;
-                width: 100%;
-                max-width: 960px;
-                height: 60vh; 
-                z-index: 1;
-                overflow: hidden;
-            }
-
-            .hero-section video {
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                z-index: 1;
-                max-width: 960px;
-                object-fit: cover;
-            }
-
-            .wsl {
-                background-color: rgba(150, 158, 125, .8);
-                height: 30vh;
-                width: 40vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                font-size: 1.9em;
-                color: rgba(250, 250, 248, 0.5);
-                border-radius: 50px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-                z-index: 3;
-                margin: 70px auto;
-            }
+          
 
             .wsl img {
                 width: 125px;
                 height: 125px;
             }
 
-            footer {
-
-                width: 100%;
-                height: 30vh;
-                background-color: #969E7D
-            }
-           
-            .footer-container {
-
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                padding: 20px;
-
-            }
-
-            .footer-link  a {
-
-                text-decoration: none;
-                color: #fafafa;
-                font-size: 2em;
-
-            }
-
-            .aboutus {
-
-            }
-
-
-            .expbar {
-
-            }
-
+        
 
     } 
 
@@ -216,37 +195,43 @@
 
     <div class="content">
         <h1> The Wockhart Slush Recording Label</h1>
+        <div class="box">
+            <p> Welcome to the label thats making it happen.
+                 Wocky Slush is on the cutting edge of the rap game. 
+                 Pour up and explore what it means to be a real WOCKSTAR. </p>
+        </div>
     </div>
 
     <footer>
-        <div class="footer-container">
-        <div class="footer-link">
-            <a href="#"> WSR Merch </a>
-        </div>
-        <div class="footer-link">
-            <a href="#"> WSR Merch </a>
-        </div> 
-        <div class="footer-link">
-            <a href="#"> WSR Merch </a>
-        </div>
-        <div class="about_us">
-            <div class="footer-link">
-                <a href="#"> About Us </a>
-            </div>
-            <span class="expbar"></span> <span class="expbar"></span>
-            
-            <div class="footer-popupmenu"> </div> 
-
-                    <!-- <ul class="mobile-list">
-            
-                        <li class="footer-link"> <a href="/artist.html"> Our Artists </a> </li>
-                        <li class="footer-link"> <a href="/catalog.html"> Our Catalog </a> </li>
-                        <li class="footer-link"> <a href="/world.html"> Our World </a> </li>
-                       
-                    </ul> -->
-            </div>
-        </div>
-        </div>
+       <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+       </div>
+       <ul class="social-links">
+            <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+       </ul>
+       <ul class="menu">
+            <li>
+                <a href="#">Home</a>
+                <a href="#">Home</a>
+                <a href="#">Home</a>
+                <a href="#">Home</a>
+            </li>
+       </ul>
+       
     </footer>
 
     
