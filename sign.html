@@ -3,9 +3,261 @@
     
 <head>
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+    <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
+    
     <title> Wocky Slush Records </title>
 
     <link rel="stylesheet" href="styles.css">   
+   
+   
+    <style>
+
+        .sign-intro {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #fffff9;
+        
+        }
+
+        .sign-text {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+        .header-content {
+
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .hbox {
+
+            z-index: 3;
+            position: relative;
+            margin: 40px 0 0 0;
+            position: relative;
+            flex-direction: column;
+            display: flex;
+            background-color: rgba(150, 158, 125, .8);
+            border-radius: 60px;
+            width: 600px;
+            font-size: 1.2em;
+            height: 15vh;
+            color: #e9e3e3;;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            z-index: 900;
+
+        }
+
+        .side-img {
+
+            background-color: coral;
+            width: 500px;
+            height: 400px;
+            border-radius: 30px;
+            margin-top: 80px;
+
+        }
+
+        .side-img img {
+
+            border-radius: 30px;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+            overflow: hidden;
+
+        }
+
+        .below-banner-content {
+
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: nowrap;
+            gap: 40px;
+            padding: 55px 0 40px 0;
+
+        }
+
+        .box {
+
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 80px;
+            background-color: rgba(150, 158, 125, .8);
+            border-radius: 60px;
+            height: 400px;
+            width: 650px;
+            color: #e9e3e3;
+            margin: 80px 0 25px 0;
+            font-size: 2.4em;
+            transition: all 0.3s;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+
+            
+        }
+
+        .sign-img {
+
+            background-color: red;
+            width: 100%;
+            height: 45vh;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            position: absolute;
+
+        }
+
+        .sign-img img {
+
+            width: 100%;
+            height: 110%;
+            z-index: 1;
+            object-fit: cover;
+            overflow: hidden;
+
+        }
+
+        .sign-form {
+
+            background-color: #363636;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 0 50px 0;
+            width: 100%;
+            height: 900px;
+
+        }
+
+        .sign-form button {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0);
+            color: #fafaf8;
+            font-size: 24px; 
+            border-radius: 3px; 
+            border: 4px solid #fafaf8; 
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            width: 240px;
+            height: 60px;
+            margin: 0px 0 20px 0;
+            transition: all 0.3s ease-in-out;
+
+        }
+
+        .sign-form button:hover {
+
+            transition: all 0.3s ease-in-out;
+            background-color: #AC63F0;
+            border-color: #AC63F0;
+
+        }
+
+        .sign-form form {
+            background-color: palegreen;
+            height: 600px;
+            border-radius: 5px;
+            margin: 20px 0 20px 0;
+            width: 800px;
+        }
+
+        @media screen and (max-width: 1215px) {
+            
+            .side-img {
+                display: none;
+            }
+            .sign-form form {
+                width: 600px;
+            }
+
+            .box {
+                width: 730px;
+            }
+
+    
+        }
+
+        @media screen and (max-width: 960px) {
+            
+            .box {
+                width: 620px;
+            }
+
+            .side-img img{
+
+                width: 210%;
+                height: 30%;
+                overflow: hidden;
+
+            }
+
+            .hbox {
+                width: 500px;
+            }
+
+            .header-content {
+                align-items: flex-start;
+            }
+
+            .hbox {
+                margin: 80px 0 0 0;
+            }
+
+            .below-banner-content {
+                align-items: center;
+            }
+
+            .sign-form form {
+                width: 80%;
+            }
+            
+
+        }
+
+        @media screen and (max-width: 620px) {
+           
+            .hbox {
+
+                width: 300px;
+                
+            }
+
+            .box {
+
+                width: 300px;
+
+            }
+
+            
+        }
+
+
+    </style>
+
 
 </head>
 
@@ -56,9 +308,6 @@
 
         </div>
 
-        
-
-
     </nav>
      
     <div id="popup-nav-mobile">
@@ -77,7 +326,103 @@
     </div>
 
 
-   
+
+
+
+    <div class="sign-intro">
+
+        <div class="sign-text">
+
+            <div class="header-content">
+
+                <div class="hbox">
+
+                    <h1></h1>
+
+                </div>
+
+                <div class="sign-img">
+
+                    <img src="/images/raplong.jpg" id="shortpic" alt="artist performing at a crazy concert">
+
+                </div>
+
+            </div>
+
+            <div class="below-banner-content">
+
+                <div class="side-img">
+
+                    <img src="/images/rapshort.jpg" alt="Rapper jumping on stage">
+
+                </div>
+
+                <div class="box">
+
+                    <p></p>
+
+                </div>
+
+            </div>
+
+        </div>
+       
+    </div>
+
+        
+ 
+        
+      
+
+    </div>
+
+    <div class="sign-form">
+        <button class="form-activater"> CLICK HERE </button>
+        <form>
+        </form>
+    </div>
+
+
+    <footer>
+
+        <div class="waves">
+             <div class="wave" id="wave1"></div>
+             <div class="wave" id="wave2"></div>
+             <div class="wave" id="wave3"></div>
+             <div class="wave" id="wave4"></div>
+        </div>
+ 
+        <ul class="social-links">
+             <li>
+                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
+             </li>
+             <li>
+                 <a href="#"><img src="images/hh.png" id="img-link"></img></a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+             </li>
+        </ul>
+ 
+        <ul class="menu">
+             <li>
+                 <a href="#">Label</a>
+                 <a href="#">Artists</a>
+                 <a href="#">Sign</a>
+                 <a href="#">Legal/FAQ</a>
+             </li>
+        </ul>
+        
+     </footer>
+ 
+     
+ 
 
     <script src="app.js"></script>
 
