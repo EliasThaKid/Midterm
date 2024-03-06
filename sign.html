@@ -4,7 +4,10 @@
 <head>
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
     <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="images/hh.png">
+    <meta name="keywords" content="record label, music label, independent artists, hip-hop, rap, underground rap,
+    artist management, music distribution, album releases, concerts, events">
     <title> Wocky Slush Records </title>
 
     <link rel="stylesheet" href="styles.css">   
@@ -119,7 +122,6 @@
 
         .sign-img {
 
-            background-color: red;
             width: 100%;
             height: 45vh;
             display: flex;
@@ -146,12 +148,11 @@
             align-items: center;
             flex-direction: column;
             padding: 50px 0 50px 0;
-            width: 100%;
-            height: 900px;
-
+            height: 250px;
+            transition: all;
         }
 
-        .sign-form button {
+        .sign-form button  {
 
             display: flex;
             align-items: center;
@@ -169,7 +170,7 @@
 
         }
 
-        .sign-form button:hover {
+        .sign-form button:hover, #submitbutton:hover {
 
             transition: all 0.3s ease-in-out;
             background-color: #AC63F0;
@@ -177,19 +178,124 @@
 
         }
 
-        .sign-form form {
-            background-color: palegreen;
-            height: 600px;
+        #form {
+
+            background-color: #fafaf8;
+            height: 0px;
             border-radius: 5px;
-            margin: 20px 0 20px 0;
-            width: 800px;
+            /* margin: 20px 0 20px 0; */
+            /* padding: 80px; */
+            width: 600px;
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            /* justify-content: center; */
+            
         }
+
+        .form-container {
+
+            max-width: 600px;
+            height: 700px;
+
+        }
+
+        #asterick {
+            color: #d83a0e;
+        }
+
+
+        .form-item {
+            color: #1b1a1a; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin: 15px 0 35px 0;
+            font-size: 1.3em;
+
+        }
+
+        #err-item1, #err-item2 {
+
+            color: #8e1313; 
+            margin: -15px 0 15px 20px !important; 
+
+        }
+
+        #err-item3 {
+
+            color: #8e1313; 
+            margin: 12px 0 15px 20px !important; 
+
+        }
+
+        .form-item input, select {
+            font-size: 1.0em;
+            
+        }
+
+        .check-box {
+            margin-left: 32px;
+        }
+
+        .check-box input[type="checkbox"] {
+            transform: scale(1.5); 
+            margin-right: 10px; 
+        }
+
+        .form-agree {
+            font-size: 1.3em;
+        }
+
+        #nametypesect, #emailtypesect {
+            margin-left: auto;
+        }
+
+        #genrelt {
+            margin-left: 20px;
+        }
+
+        #agree {
+            color: #1b1a1a; 
+            margin-right: 5px;
+            font-size: 1.0em;
+
+        }
+
+        #formhead {
+            text-align: center;
+        }
+
+        #submitbutton {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0);
+            color: #1b1a1a;
+            font-size: 24px; 
+            border-radius: 3px; 
+            border: 4px solid #1b1a1a; 
+            margin-top: 30px;
+            font-weight: 600;
+            width: 240px;
+            height: 60px;
+            transition: all 0.3s ease-in-out;
+
+
+        }
+
+        
 
         @media screen and (max-width: 1215px) {
             
             .side-img {
                 display: none;
             }
+
             .sign-form form {
                 width: 600px;
             }
@@ -204,7 +310,7 @@
         @media screen and (max-width: 960px) {
             
             .box {
-                width: 620px;
+                width: 720px;
             }
 
             .side-img img{
@@ -231,8 +337,13 @@
                 align-items: center;
             }
 
+            .sign-form  {
+                
+                align-items: center;
+            }
+
             .sign-form form {
-                width: 80%;
+                width: 400px;
             }
             
 
@@ -242,13 +353,13 @@
            
             .hbox {
 
-                width: 300px;
+                width: 400px;
                 
             }
 
             .box {
 
-                width: 300px;
+                width: 450px;
 
             }
 
@@ -377,9 +488,87 @@
     </div>
 
     <div class="sign-form">
-        <button class="form-activater"> CLICK HERE </button>
-        <form>
-        </form>
+        <button id="form-button"> CLICK HERE </button>
+        
+        <div class="form-container">
+
+            <form action='#' method='get' id="form">
+
+                <div class="form-item" id="formhead">
+                    <h2> SIGN WITH US TODAY </h2>
+                </div>
+                        
+                <div class="form-item">
+
+                    <label>Name<span id="asterick">*</span>:</label>
+
+                    <div id="name-field">
+                        <input type="text" name='name' id='nametypesect' autocomplete="given-name"/>
+                    </div>
+                </div>
+
+                <div class="form-item" id="err-item1">
+                    <div class="error"></div>
+                </div>
+                
+                <div class="form-item">
+
+                    <label>Email<span id="asterick">*</span>:</label>
+
+                    <div id="email-field">
+                        <input type="text" email='email' id='emailtypesect' autocomplete="email"/>
+                    </div>
+
+                </div>
+
+                <div class="form-item" id="err-item2">
+                    <div class="error"></div>
+                </div>
+
+                <div class="form-item">
+
+                    <label>Genre</label>
+
+                        <select name="genre" id="genrelt">
+                        <option value="trap">Trap</option>
+                        <option value="rnb">R&B</option>
+                        <option value="dnce">Dance Hall</option>
+                        <option value="jrsy">Jersey Club</option>
+                        <option value="hphp">Hip Hop</option></select>
+
+                    </div>
+
+                <div class="form-agree">
+
+                    <div class="prompt">
+                        <label> Please read the </label>
+
+                        <a href="https://tenor.com/view/bruh-meme-gif-26978290" target="blank" id="terms"> terms and conditions </a><span id="asterick">*</span>
+                    </div>
+                
+                    <div class="check-box">
+                         <input type="checkbox" name="chkterms" value="agreed" id="agree"> Yes I have read the Terms
+                    </div>
+                
+                </div>
+
+                <div class="form-item" id="err-item3">
+                    <div class="error"></div>
+                </div>
+
+            
+                
+                <div class="form-item">
+
+                    <input type = "submit" value = "Submit!" id="submitbutton">
+
+                </div>
+
+            </form>
+
+
+        </div>
+        
     </div>
 
 
@@ -420,7 +609,83 @@
         </ul>
         
      </footer>
- 
+     
+     <script>
+
+        formButton = document.querySelector('#form-button'); 
+        const form = document.querySelector('#form');
+        const formContainer = document.querySelector('.sign-form');
+        var on = false;
+        form.style.height = "0px";
+        formContainer.style.height = "250px"
+
+
+        formButton.addEventListener("click", toggleForm);
+
+        function toggleForm()  {
+            on = !on;
+            formContainer.style.height = on ? "900px" : "250px";
+            form .style.height = on ? "600px" : "0px";
+        }
+
+
+        const errormsgItems = {
+            'err-item1': document.getElementById('err-item1'),
+            'err-item2': document.getElementById('err-item2'),
+            'err-item3': document.getElementById('err-item3')
+        };
+
+        for (const erritemId in errormsgItems) {
+            if (errormsgItems.hasOwnProperty(erritemId)) {
+                const item = errormsgItems[erritemId];
+                item.style.display = 'none';
+            }
+        }
+
+        $(document).ready(function() {
+
+            $("form").submit(validateForm);
+        });
+
+        function validateForm(e) {
+
+            e.preventDefault();
+
+            emptyField = true;
+
+            name = $("#name-field input[name='name']").val();
+            if (name == "") {
+                errormsgItems['err-item1'].innerText = "Cannot Leave Name Field Empty";
+                errormsgItems['err-item1'].style.display = 'block';
+                emptyField = false;
+            } else {
+                errormsgItems['err-item1'].innerText = "";
+            }
+
+
+            var email = $("#email-field input[email='email']").val();
+            if (email == "") {
+                errormsgItems['err-item2'].innerText = "Cannot Leave Email Field Empty";
+                errormsgItems['err-item2'].style.display = 'block';
+                emptyField = false;
+            } else {
+                errormsgItems['err-item2'].innerText = "";
+            }
+
+            if ($('#agree').prop('checked')) {
+                errormsgItems['err-item3'].innerText = "";
+                emptyField = false;
+            } else {
+                errormsgItems['err-item3'].innerText = "You Must Agree to the Terms!!";
+                errormsgItems['err-item3'].style.display = 'block';
+            }   
+
+            if (!emptyField) {
+                e.preventDefault();
+            }
+
+        }   
+     </script>
      
  
 
