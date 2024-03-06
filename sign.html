@@ -54,6 +54,9 @@
             position: relative;
             flex-direction: column;
             display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
             background-color: rgba(150, 158, 125, .8);
             border-radius: 60px;
             width: 600px;
@@ -149,7 +152,7 @@
             flex-direction: column;
             padding: 50px 0 50px 0;
             height: 250px;
-            transition: all;
+            transition: all 0.6s ease;
         }
 
         .sign-form button  {
@@ -190,7 +193,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: all 0.6s ease;
             /* justify-content: center; */
             
         }
@@ -198,7 +201,7 @@
         .form-container {
 
             max-width: 600px;
-            height: 700px;
+            height: 0px;
 
         }
 
@@ -311,11 +314,12 @@
             
             .box {
                 width: 720px;
+                font-size: 2.5em;
             }
 
             .side-img img{
 
-                width: 210%;
+                width: 110%;
                 height: 30%;
                 overflow: hidden;
 
@@ -323,14 +327,12 @@
 
             .hbox {
                 width: 500px;
+                margin: 120px 0 0 0;
+                font-size: 1.1em;
             }
 
             .header-content {
                 align-items: flex-start;
-            }
-
-            .hbox {
-                margin: 80px 0 0 0;
             }
 
             .below-banner-content {
@@ -342,28 +344,56 @@
                 align-items: center;
             }
 
-            .sign-form form {
+            /* .sign-form form {
                 width: 400px;
+            } */
+
+            #form {
+                width: 600px;
             }
             
 
         }
 
-        @media screen and (max-width: 620px) {
+        @media screen and (max-width: 720px) {
            
             .hbox {
 
-                width: 400px;
+                width: 450px;
+                font-size: 1.1em;
                 
             }
 
             .box {
-
-                width: 450px;
+                margin: 20px 0 15px 0;
+                width: 650px;
+                font-size: 2.3em;
 
             }
 
+            #form {
+                width: 400px;
+            }
+
             
+        }
+
+        @media screen and (max-width: 630px) {
+
+            .hbox {
+
+                width: 400px;
+                font-size: 0.9em;
+
+            }
+
+            .box {
+
+                margin: 20px 0 15px 0;
+                width: 450px;
+                font-size: 1.8em;
+
+            }
         }
 
 
@@ -448,7 +478,7 @@
 
                 <div class="hbox">
 
-                    <h1></h1>
+                    <h1>Get Signed With WSR</h1>
 
                 </div>
 
@@ -470,7 +500,11 @@
 
                 <div class="box">
 
-                    <p></p>
+                    <p> Become a WOCKSTAR, 
+                        we got artists busting 
+                        stages and going crazy across the nation. 
+                        You're just one quick form away! 
+                        click the button below to get started.</p>
 
                 </div>
 
@@ -615,17 +649,19 @@
         formButton = document.querySelector('#form-button'); 
         const form = document.querySelector('#form');
         const formContainer = document.querySelector('.sign-form');
-        var on = false;
+        var on2 = false;
         form.style.height = "0px";
         formContainer.style.height = "250px"
+        formContainer.style.padding = "40px 0 0 0"
 
 
         formButton.addEventListener("click", toggleForm);
 
         function toggleForm()  {
-            on = !on;
-            formContainer.style.height = on ? "900px" : "250px";
-            form .style.height = on ? "600px" : "0px";
+            on2 = !on2;
+            formContainer.style.height = on2 ? "900px" : "250px";
+            formContainer.style.padding = on2 ? "50px 0 50px 0" : "40px 0 0 0"
+            form.style.height = on2 ? "600px" : "0px";
         }
 
 
@@ -645,6 +681,7 @@
         $(document).ready(function() {
 
             $("form").submit(validateForm);
+            
         });
 
         function validateForm(e) {
@@ -674,14 +711,15 @@
 
             if ($('#agree').prop('checked')) {
                 errormsgItems['err-item3'].innerText = "";
-                emptyField = false;
             } else {
                 errormsgItems['err-item3'].innerText = "You Must Agree to the Terms!!";
                 errormsgItems['err-item3'].style.display = 'block';
+                emptyField = false;
             }   
 
-            if (!emptyField) {
-                e.preventDefault();
+
+            if (emptyField) {
+                e.currentTarget.submit(); 
             }
 
         }   

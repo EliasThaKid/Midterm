@@ -1,8 +1,51 @@
+$(window).on("load", function() {
+    console.log("Here");
+    
+    animateWave2($('#wave1'), 4);
+    animateWave1($('#wave2'), 4); 
+    animateWave1($('#wave3'), 3); 
+    animateWave2($('#wave4'), 3); 
+     
+});
+
+console.log("Here");
 const navButtons = document.getElementsByClassName('nav-button');
 const popupMenus = document.getElementsByClassName('popup-menu');
 const menu = document.querySelector('#mobile-menu');
 const mobileMenu = document.querySelector('#popup-nav-mobile');
 const mobileLinks = document.querySelector('.mobile-list');
+
+
+
+function animateWave1(wave, duration) {
+
+    function animate() {
+    
+        wave.animate({'background-position-x': '0px'}, duration * 1000, 'linear', function() {
+            
+            wave.css('background-position-x', '1000px');
+            
+            animate();
+        });
+    }
+
+    animate();
+}
+
+function animateWave2(wave, duration) {
+
+    function animate() {
+
+        wave.animate({'background-position-x': '1000px'}, duration * 1000, 'linear', function() {
+            
+            wave.css('background-position-x', '0px');
+            
+            animate();
+        });
+    }
+
+    animate();
+}
 
 var on = false;
 
