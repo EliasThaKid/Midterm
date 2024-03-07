@@ -8,7 +8,7 @@ $(window).on("load", function() {
      
 });
 
-console.log("Here");
+
 const navButtons = document.getElementsByClassName('nav-button');
 const popupMenus = document.getElementsByClassName('popup-menu');
 const menu = document.querySelector('#mobile-menu');
