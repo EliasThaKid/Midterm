@@ -3,9 +3,50 @@
     
 <head>
     <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
-    <title> Wocky Slush Records </title>
+    <title> Catalog Page </title>
 
-    <link rel="stylesheet" href="styles.css">   
+    <link rel="stylesheet" href="styles.css">
+
+ <!-- Added styles for product display from products1.html -->
+    <style>
+        .product-container {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product {
+            flex-basis: calc(25% - 20px); 
+            margin: 10px 0;
+            border: .5px;
+            padding: 20px;
+        }
+        .product-name {
+            font-weight: bold;
+            font-size: 30px; 
+            color: #000; 
+            margin: 5px 0;
+        }
+        .product-description, .product-categories { 
+            margin-top: 5px; 
+        }
+        .product-price {
+            color: #000; 
+            text-align: right;
+            font-size: 25px;
+        }
+        .product-image {
+            width: 100%; 
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover; 
+        }
+    </style>
 
 </head>
 
@@ -56,9 +97,6 @@
 
         </div>
 
-        
-
-
     </nav>
      
     <div id="popup-nav-mobile">
@@ -76,10 +114,64 @@
         </ul>
     </div>
 
-
-    
-
     <script src="app.js"></script>
+
+
+
+
+
+
+
+
+<!-- Catalog code -->
+    <div class="product-container">
+        <!-- Products will be inserted here by JavaScript -->
+    </div>
+
+    <script>
+        const products = [
+            {
+                name: "Luv Is Rage 2 Album",
+                price: "15.99",
+                description: "Lil Uzi Vert",
+                categories: ["Music", "Albums"],
+                imageURL: "catalog_album.jpeg" 
+            },
+            {
+                name: "Band T-shirt",
+                price: "20.00",
+                description: "High-quality cotton t-shirt with band logo.",
+                categories: ["Merch", "Clothing"]
+            },
+            {
+                name: "WSR Sticker Pack",
+                price: "5.50",
+                description: "A pack of 10 unique stickers.",
+                categories: ["Accessories"]
+            }
+        ];
+
+        const productContainer = document.querySelector('.product-container');
+
+        products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            let productImage = product.imageName ? `<img src="${product.imageName}" alt="${product.name}" style="width:100%; max-width:200px; height:auto; margin-bottom:10px;">` : '';
+            productElement.innerHTML = `
+                ${productImage}
+                <div class="product-name">${product.name}</div>
+                <div class="product-description">${product.description}</div>
+                <div class="product-categories">Categories: ${product.categories.join(", ")}</div>
+                <div class="product-price">$${product.price}</div>
+            `;
+            productContainer.appendChild(productElement);
+        });
+
+    </script>
+
+
+
+
 
 </body>
 
