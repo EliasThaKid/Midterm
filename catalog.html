@@ -42,7 +42,7 @@
         }
         .product-image {
             width: 100%; 
-            height: 100%;
+            height: auto;
             aspect-ratio: 1 / 1;
             object-fit: cover; 
         }
@@ -124,59 +124,42 @@
 
 
 
+    <!-- Catalog code -->
+    <div class="product-container" id="catalog">
 
+        <div class="product">
+            <img src="images/catalog_album.jpeg" alt="Luv Is Rage 2 Album" class="product-image">
+            <div class="product-name">Luv Is Rage 2 Album</div>
+            <div class="product-description">Lil Uzi Vert</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
 
+        <div class="product">
+            <img src="images/catalog_blackshirt.png" alt="Black T-shirt" class="product-image">
+            <div class="product-name">WSR Black T-shirt</div>
+            <div class="product-description">High-quality cotton black t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
 
+        <div class="product">
+            <img src="images/catalog_tshirt.png" alt="White T-shirt" class="product-image">
+            <div class="product-name">WSR White T-shirt</div>
+            <div class="product-description">High-quality cotton white t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
 
-<!-- Catalog code -->
-    <div class="product-container">
-        <!-- Products will be inserted here by JavaScript -->
+        <div class="product">
+            <img src="images/wsr logo.png" alt="WSR Sticker Pack" class="product-image">
+            <div class="product-name">WSR Sticker Pack</div>
+            <div class="product-description">A pack of 10 unique stickers.</div>
+            <div class="product-categories">Categories: Accessories</div>
+            <div class="product-price">$5.50</div>
+        </div>
+
     </div>
-
-    <script>
-        const products = [
-            {
-                name: "Luv Is Rage 2 Album",
-                price: "15.99",
-                description: "Lil Uzi Vert",
-                categories: ["Music", "Albums"],
-                // imageURL: "catalog_album.jpeg" 
-            },
-            {
-                name: "Band T-shirt",
-                price: "20.00",
-                description: "High-quality cotton t-shirt with band logo.",
-                categories: ["Merch", "Clothing"]
-            },
-            {
-                name: "WSR Sticker Pack",
-                price: "5.50",
-                description: "A pack of 10 unique stickers.",
-                categories: ["Accessories"]
-            }
-        ];
-
-        const productContainer = document.querySelector('.product-container');
-
-        products.forEach(product => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product');
-            let productImage = product.imageName ? `<img src="${product.imageName}" alt="${product.name}" style="width:100%; max-width:200px; height:auto; margin-bottom:10px;">` : '';
-            productElement.innerHTML = `
-                ${productImage}
-                <div class="product-name">${product.name}</div>
-                <div class="product-description">${product.description}</div>
-                <div class="product-categories">Categories: ${product.categories.join(", ")}</div>
-                <div class="product-price">$${product.price}</div>
-            `;
-            productContainer.appendChild(productElement);
-        });
-
-    </script>
-
-
-
-
 
 </body>
 
