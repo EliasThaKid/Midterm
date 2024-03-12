@@ -2,13 +2,205 @@
 <html>
     
 <head>
-    <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <meta name="viewport" content= "width=device-width, initial-scale=1">
     <title> Wocky Slush Records </title>
 
     <link rel="stylesheet" href="styles.css">   
+    <script src="https://kit.fontawesome.com/cc5b01fdfb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="images/hh.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
 
 </head>
+
+<style>
+h1{
+    font-family: 'Nosifer';
+}
+
+
+#topbanner {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color:#AC63F0 ;
+    font-family: 'Nosifer';
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+
+    min-height: 30vh;  
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    background-image: url('images/Rappers together (wsr).webp');  
+    background-size:  cover; 
+    background-repeat: no-repeat;
+}
+
+#bigholder{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px; 
+    padding: 10px;
+    padding-bottom: 100px;
+    background:#fafaf8;
+
+} 
+
+.square-holder{
+    display: flex;
+    height: 400px;
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    margin-bottom: 40px;
+    flex-direction: column;
+    z-index: 1;
+}
+
+
+.square{
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 300px;
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    margin-bottom: 10px;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.square img{
+    width: 100%; 
+    height: 100%;
+    z-index: 0;
+    display: block;
+}
+
+
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color:#AC63F0 ; 
+    background: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    font-family: 'Nosifer';
+    font-size: 25px;
+}
+
+.square-text{
+    color: #363636; 
+    text-align: left; 
+    margin-top: 0px; 
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Nosifer'
+}
+
+.date{
+    color: #363636; 
+    text-align: left; 
+    margin-top: 10px; 
+    font-size: 15px;
+    font-family: 'Nosifer'
+}
+
+
+
+.custom-links{
+    font-family: 'Nosifer';
+    text-decoration: none;
+    color:#AC63F0
+}
+
+.solid-line {
+    width: 35%;       
+    height: 2px;       
+    background-color: black; 
+    margin: 0;     
+}
+
+.square:hover .overlay-text,
+.square:hover {
+    opacity: 1; 
+}
+
+
+@media screen and (max-width: 960px) {
+
+.content {
+    height: 600px;
+}
+
+.hbox {
+    font-size: 1.1em;
+    width: 90%;
+}
+
+
+.box {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(150, 158, 125, .8);
+    border-radius: 60px;
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 2.2em;
+}
+
+.popup-menu {
+    display: none;
+}
+
+
+.wsl img {
+    width: 125px;
+    height: 125px;
+}
+
+
+
+} 
+
+@media screen and (max-width: 600px) {
+
+.hbox {
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.box {
+    font-size: 1.6em;
+
+}
+
+
+
+
+}
+
+
+</style>
 
 <body>
 
@@ -77,6 +269,168 @@
         </ul>
     </div>
 
+
+
+    <script src="app.js"></script>
+
+    <div class = banner id = topbanner> 
+       <h1>Our World!</h1>
+    </div>
+
+    <div class = artistcontainer id = bigholder>
+    
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/uzi (news).jpg">
+            <div class="overlay-text"><a href="https://radiomilwaukee.org/discover-music/music-news/2024-03-11/lil-uzi-vert-summerfest-amphitheater" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Uzi Headlining at Summerfest!</div> 
+            <div class="date">9/21/23</div> 
+    </div>
+
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/Future (news).webp">
+            <div class="overlay-text"><a href="https://www.complex.com/music/a/fnr-tigg/future-didnt-want-to-tell-fans-he-quit-lean-first" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Future talks about quitting lean</div> 
+            <div class="date">8/17/23</div> 
+    </div>
+
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/Juice wrld3.webp">
+            <div class="overlay-text"><a href="https://www.tmz.com/2019/12/08/juice-wrld-dead-dies-seizure-chicago-midway-airport-hospital/" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Juice Wrld Dead at 21</div> 
+        <div class="date">12/21/20</div> 
+    </div>
+
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/yeat (news).jpg">
+            <div class="overlay-text"><a href="https://www.billboard.com/music/chart-beat/kanye-west-ty-dolla-sign-vultures-yeat-2093-hip-hop-top-two-200-1235618165/" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Yeat sells 3 billion albums, and goes #1</div> 
+            <div class="date">11/25/23</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/travis scott (news).webp">
+            <div class="overlay-text"><a href="https://corporate.mcdonalds.com/corpmcd/our-stories/article/travis-scott-embark.html" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Travis Scott has a new deal coming</div> 
+            <div class="date">6/24/19</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/playboi carti (news).jpg">
+            <div class="overlay-text"><a href="https://www.willistonian.org/playboi-carti-set-to-drop-new-album-sometime/" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Will Playboi Carti ever drop??? </div> 
+            <div class="date">1/22/24</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/thug (news).jpg">
+            <div class="overlay-text"><a href="https://www.nytimes.com/article/young-thug-ysl-rico-trial.html" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Young Thug stands trial in rico case</div> 
+            <div class="date">5/24/22</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/takeoff (news).webp">
+            <div class="overlay-text"><a href="https://www.latimes.com/entertainment-arts/music/story/2023-11-02/takeoff-death-migos-quavo-offset-shooting-anniversary" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Migos reunite after tragic death</div> 
+            <div class="date">3/2/24</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/Lean (wsr).jpeg">
+            <div class="overlay-text"><a href="https://www.food.com/recipe/absolutely-perfect-kool-aid-33387" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Lean Cures Cancer? Learn to Make it!</div> 
+            <div class="date">7/30/99</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/Lucki (news).jpg">
+            <div class="overlay-text"><a href="https://www.tiktok.com/@foreverglokn/video/7306321865398586667?lang=en" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Is Luckis Lean gut getting Larger?</div> 
+            <div class="date">1/19/24</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/Smokepurpp (news).jpg">
+            <div class="overlay-text"><a href="https://hiphopdx.com/news/id.56651/title.smokepurpp-clowns-himself-over-tanked-florida-jit-album-sales" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Q list rapper Smokepurpp drops album and goes tripple aluminum</div> 
+            <div class="date">10/7/23</div> 
+    </div>
+    <div class = square-holder>
+        <div class = square>
+            <img src ="images/kankan summrs (news).jpeg">
+            <div class="overlay-text"><a href="https://www.livenationentertainment.com/2023/08/our-generation-music-presents-2023-next-gen-tour-with-kankan-summrs-f1lthy-and-more/" target="_blank" class = custom-links>Learn More -></a></div>
+        </div>
+        <div class = solid-line></div>
+        <div class="square-text">Summrs and KanKan go on tour!</div> 
+            <div class="date">9/21/22</div> 
+    </div>
+
+    </div>
+    
+    
+    <footer>
+
+        <div class="waves">
+             <div class="wave" id="wave1"></div>
+             <div class="wave" id="wave2"></div>
+             <div class="wave" id="wave3"></div>
+             <div class="wave" id="wave4"></div>
+        </div>
+ 
+        <ul class="social-links">
+             <li>
+                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
+             </li>
+             <li>
+                 <a href="#"><img src="images/hh.png" id="img-link"></img></a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
+             </li>
+             <li>
+                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+             </li>
+        </ul>
+ 
+        <ul class="menu">
+             <li>
+                 <a href="#">Label</a>
+                 <a href="#">Artists</a>
+                 <a href="#">Sign</a>
+                 <a href="#">Legal/FAQ</a>
+             </li>
+        </ul>
+        
+     </footer>
 
    
     <script src="app.js"></script>
