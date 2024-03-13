@@ -45,6 +45,47 @@
         .box ul{
             list-style-type: none;
         }
+        @media screen and (max-width: 960px) {
+            .content {
+                height: 600px;
+            }
+            .hbox {
+                font-size: 1.1em;
+                width: 90%;
+            }
+            .box {
+
+                position: relative;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                padding: 30px;
+                background-color: rgba(150, 158, 125, .8);
+                border-radius: 60px;
+                height: 300px;
+                width: 100%;
+                margin-top: 30px;
+                font-size: 2.2em;
+            }
+            .popup-menu {
+                display: none;
+            }
+            .wsl img {
+                width: 125px;
+                height: 125px;
+            }
+        } 
+
+        @media screen and (max-width: 600px) {
+            .hbox {
+                font-size: 0.8em;
+                width: 100%;
+            }
+            .box {
+                font-size: 1.6em;
+
+            } 
+        }
     </style>
 </head>
 
@@ -151,7 +192,7 @@
         </ul>
      </footer>
 
-     <script src="app.js"></script>
+     <script src="app.js"> </script>
 </body>
 
 </html> 
