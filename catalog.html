@@ -9,6 +9,30 @@
 
  <!-- Added styles for product display from products1.html -->
     <style>
+        h1{
+            font-family: 'Nosifer';
+        }
+
+        #topbanner {
+            height: 50px;
+            width: 100%;
+            background-color: black;
+            color:#AC63F0 ;
+            font-family: 'Nosifer';
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px  1px 0 #000,
+                1px  1px 0 #000;
+            min-height: 30vh;  
+            display: flex;
+            justify-content: center; 
+            align-items: center;   
+            background-image: url('images/catalog_bg.webp');  
+            background-size:  cover; 
+            background-repeat: no-repeat;
+        }
+
         .product-container {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -25,20 +49,23 @@
             margin: 10px 0;
             border: .5px;
             padding: 20px;
+            justify-content: space-between;
         }
         .product-name {
             font-weight: bold;
             font-size: 30px; 
             color: #000; 
             margin: 5px 0;
+            cursor: pointer;
         }
         .product-description, .product-categories { 
             margin-top: 5px; 
+            cursor: pointer;
         }
         .product-price {
-            color: #000; 
             text-align: right;
             font-size: 25px;
+            cursor: pointer;
         }
         .product-image {
             width: 100%; 
@@ -46,6 +73,11 @@
             aspect-ratio: 1 / 1;
             object-fit: cover; 
         }
+        .product-image:hover {
+            filter: brightness(80%);
+            cursor: pointer;
+        }
+
     </style>
 
     <meta name="viewport" content= "width=device-width, initial-scale=1">
@@ -125,20 +157,32 @@
 
 
     <!-- Catalog code -->
+    <div class = banner id = topbanner> 
+        <h1>Catalog</h1>
+     </div>
+ 
     <div class="product-container" id="catalog">
 
         <div class="product">
-            <img src="images/catalog_album.jpeg" alt="Luv Is Rage 2 Album" class="product-image">
-            <div class="product-name">Luv Is Rage 2 Album</div>
-            <div class="product-description">Lil Uzi Vert</div>
-            <div class="product-categories">Categories: Music, Albums</div>
-            <div class="product-price">$15.99</div>
+            <img src="images/catalog_redshirt.png" alt="Red T-shirt" class="product-image">
+            <div class="product-name">WSR Red T-shirt</div>
+            <div class="product-description">High-quality cotton red t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
         </div>
 
         <div class="product">
             <img src="images/catalog_blackshirt.png" alt="Black T-shirt" class="product-image">
             <div class="product-name">WSR Black T-shirt</div>
             <div class="product-description">High-quality cotton black t-shirt with WSR logo.</div>
+            <div class="product-categories">Categories: Merch, Clothing</div>
+            <div class="product-price">$20.00</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_blueshirt.png" alt="Blue T-shirt" class="product-image">
+            <div class="product-name">WSR Blue T-shirt</div>
+            <div class="product-description">High-quality cotton blue t-shirt with WSR logo.</div>
             <div class="product-categories">Categories: Merch, Clothing</div>
             <div class="product-price">$20.00</div>
         </div>
@@ -152,13 +196,36 @@
         </div>
 
         <div class="product">
+            <img src="images/catalog_uzi.webp" alt="Luv Is Rage 2 Album" class="product-image">
+            <div class="product-name">Luv Is Rage 2 Record</div>
+            <div class="product-description">Lil Uzi Vert</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_carti.webp" alt="Carti Record" class="product-image">
+            <div class="product-name">Whole Lotta Red Record</div>
+            <div class="product-description">Playboi Carti</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
+
+        <div class="product">
+            <img src="images/catalog_future.webp" alt="Luv Is Rage 2 Album" class="product-image">
+            <div class="product-name">I NEVER LIKED YOU Record</div>
+            <div class="product-description">Future</div>
+            <div class="product-categories">Categories: Music, Albums</div>
+            <div class="product-price">$15.99</div>
+        </div>
+
+        <div class="product">
             <img src="images/wsr logo.png" alt="WSR Sticker Pack" class="product-image">
             <div class="product-name">WSR Sticker Pack</div>
             <div class="product-description">A pack of 10 unique stickers.</div>
             <div class="product-categories">Categories: Accessories</div>
             <div class="product-price">$5.50</div>
         </div>
-
     </div>
 
 </body>
